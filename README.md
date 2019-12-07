@@ -18,11 +18,12 @@
 
 ### 利用したフレームワーク・ライブラリ
 - React
-- Fedux
+- react-redux
 - 
 
 ### その他開発に使用したツール
 - Firebase
+- Cloud Functions
 
 ## 役割分担
 - 森川　太斗,西川　昂志(サーバ)
