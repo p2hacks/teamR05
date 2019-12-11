@@ -1,4 +1,6 @@
+
 import React from 'react'
+import Pre from './pre';
 import { Route, Switch } from 'react-router'
 import PropTypes from 'prop-types'
 import { ConnectedRouter } from 'connected-react-router'
@@ -12,6 +14,7 @@ const App = ({ history }) => {
     <ConnectedRouter history={history}>
       <div>
         <Switch>
+   　　　 <Route exact path="/Pre" component={Pre} />
          <Route exact path="/" component={Home} />
          <Route exact path="/Home" component={Home} />
          <Route exact path="/Confirm" component={Confirm} />
