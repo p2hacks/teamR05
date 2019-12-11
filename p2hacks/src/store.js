@@ -1,31 +1,20 @@
-import { createStore } from 'redux';
-// state
-const initData = {
-    i: 0,
-    answer: []
+import { createBrowserHistory } from 'history'
+import { applyMiddleware, compose, createStore } from 'redux'
+import { routerMiddleware } from 'connected-react-router'
+import rootReducer from './reducers'
+
+export const history = createBrowserHistory()
+
+export default function configureStore(preloadedState) {
+    const  store  = createStore(
+        rootReducer(history), // root reducer with router state
+        preloadedState,
+        compose(
+            applyMiddleware(
+                routerMiddleware(history),
+            ),
+        ),
+    )
+
+    return store
 }
-//reducer
-export function questionReducer(state = initData, action) {
-    switch (action.type) {
-        case 'ADD':
-            return addReduce(state, action);
-        default:
-            return state;
-    }
-}
-function addReduce(state, action) {
-    let newanswer = state.answer.slice();
-    newanswer[state.i] = action.num;
-    return {
-        i: state.i + 1,
-        answer: newanswer
-    }
-}
-// actioncreator
-export function addAnswer(num) {
-    return {
-        type: 'ADD',
-        num: num
-    }
-}
-export default createStore(questionReducer);

@@ -1,21 +1,21 @@
 import React from 'react'
-import Pre from './pre';
+import './App.css';
 import { Route, Switch } from 'react-router'
 import PropTypes from 'prop-types'
-import { ConnectedRouter } from 'connected-react-router'
-import Question from './question'
-import Confirm from './components/Confirm'
 import { connect } from 'react-redux';
+import { ConnectedRouter } from 'connected-react-router'
+import Question from './components/question'
+import Confirm from './components/Confirm'
 import Home from './components/Home';
-import './App.css';
 import End from './components/End';
+import Pre from './components/pre';
 
 const App = ({ history }) => {
   return(
     <ConnectedRouter history={history}>
       <div>
         <Switch>
-   　　　 <Route exact path="/Pre" component={Pre} />
+          <Route exact path="/Pre" component={Pre} />
          <Route exact path="/" component={Home} />
          <Route exact path="/Home" component={Home} />
          <Route exact path="/Confirm" component={Confirm} />
