@@ -1,28 +1,15 @@
 import React, { Component } from "react";
+import { addAnswer } from './store';
+import { connect } from 'react-redux';
 import Button from "@material-ui/core/Button";
 
-export default class Qestion extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      i: 0,
-      answer: []
-    }
-    //this.handleClick = this.handleClick.bind(this);
-  }
+class Question extends Component {
+
 
   handleClick = (num) => {
-    // console.log(num);
-    let newanswer = this.state.answer.slice();
-    newanswer[this.state.i] = num;
-
-    this.setState(
-      {
-        i: this.state.i + 1,
-        answer: newanswer
-      }
-    );
-    //console.log(newanswer);
+    let action;
+    action = addAnswer(num);
+    this.props.dispatch(action);
   };
 
   render() {
@@ -41,15 +28,17 @@ export default class Qestion extends Component {
     ];
     return (
       <div>
-        <p>{question[this.state.i]}</p>
+        <p>{question[this.props.i]}</p>
         <Button onClick={this.handleClick.bind(this, 5)}>そう</Button>
         <Button onClick={this.handleClick.bind(this, 4)}>そうかもしれない</Button>
         <Button onClick={this.handleClick.bind(this, 3)}>わからない</Button>
         <Button onClick={this.handleClick.bind(this, 2)}>そうではないかもしれない</Button>
         <Button onClick={this.handleClick.bind(this, 1)}>そうではない</Button>
-        {console.log(this.state.i)}
-        {console.log(this.state.answer)}
+        {console.log(this.props.i)}
+        {console.log(this.props.answer)}
       </div>
     );
   }
 }
+
+export default connect((state) => state)(Question)

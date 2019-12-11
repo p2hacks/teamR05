@@ -1,5 +1,5 @@
 import React from 'react';
-
+import { connect } from 'react-redux';
 import './App.css';
 import Question from './question'
 function App() {
@@ -8,4 +8,4 @@ function App() {
   );
 }
 
-export default App;
+export default connect()(App);
