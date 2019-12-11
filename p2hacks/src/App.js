@@ -1,10 +1,12 @@
 import React from 'react';
-import './App.css';
 import Confirm from './components/Confirm';
+import Home from './components/Home';
+
 function App() {
   return (
     <div className="App">
-      <Confirm/>
+      <Home/>
+    <Confirm/>
     </div>
   );
 }
