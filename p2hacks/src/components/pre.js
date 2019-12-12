@@ -10,7 +10,7 @@ const Pre = (props) => {
                 <input type='text'></input>
             </p>
             <p>
-                <input type="submit" value="é€�ä¿¡ã�™ã‚‹"></input>
+                <input type="submit" value="送信する"></input>
             </p>
         </form >
     )
