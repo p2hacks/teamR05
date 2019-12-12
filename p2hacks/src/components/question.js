@@ -5,6 +5,9 @@ import Button from "@material-ui/core/Button";
 
 class Question extends Component {
 
+  constructor(props) {
+    super(props);
+  }
 
   handleClick = (num) => {
     let action;
@@ -28,13 +31,13 @@ class Question extends Component {
     ];
     return (
       <div>
-        <p>{question[this.props.i]}</p>
+        <p>{question[this.props.questionReduser.i]}</p>
         <Button onClick={this.handleClick.bind(this, 5)}>そう</Button>
         <Button onClick={this.handleClick.bind(this, 4)}>そうかもしれない</Button>
         <Button onClick={this.handleClick.bind(this, 3)}>わからない</Button>
         <Button onClick={this.handleClick.bind(this, 2)}>そうではないかもしれない</Button>
         <Button onClick={this.handleClick.bind(this, 1)}>そうではない</Button>
-        {console.log(this.props.i)}
+        {console.log(this.props.questionReduser.i)}
         {console.log(this.props.answer)}
       </div>
     );
