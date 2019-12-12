@@ -16,9 +16,13 @@ class Question extends Component {
   };
 
   render() {
+   const isQuestion = this.props.questionReduser.i;
+    
     return (
       <div>
-        {console.log(this.props)}
+        {(isQuestion<17) ? (
+           < >
+         {console.log(this.props)}
         <QuestionStatement num={this.props.question.i} />
         <Button onClick={this.handleClick.bind(this, 5)}>そう</Button>
         <Button onClick={this.handleClick.bind(this, 4)}>
@@ -29,6 +33,10 @@ class Question extends Component {
           そうではないかもしれない
         </Button>
         <Button onClick={this.handleClick.bind(this, 1)}>そうではない</Button>
+            </>
+        ) : (
+            <Button onClick={ window.location.href = "/Confirm"}></Button>)
+        }
       </div>
     );
   }
