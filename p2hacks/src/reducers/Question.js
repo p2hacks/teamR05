@@ -1,13 +1,20 @@
+function getArray() {
+  if (!sessionStorage.getItem("state")) return null
+  return sessionStorage.getItem("state").split('').map(Number)
+}
+
 //reducer
 const initData = {
   i: 0,
-  answer: [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1]
+  answer: getArray() || [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1]
 };
 const questionReducer = (state = initData, action) => {
   switch (action.type) {
     case "ADD":
-      let newanswer = state.answer;
+
+      let newanswer = state.answer.slice();
       newanswer[state.i] = action.num;
+      console.log("inreducer:" + state.answer);
       return {
         ...state,
         i: state.i + 1,
@@ -20,6 +27,12 @@ const questionReducer = (state = initData, action) => {
         ...state,
         answer: newchangeanswer
       };
+    case "RELOAD":
+      return {
+        ...state,
+        i: 0,
+        answer: action.data
+      }
     default:
       return state;
   }

@@ -12,4 +12,10 @@ export const changeAnswer = (answernum, num) => {
     num: num
   };
 };
+export const reloadChange = (data) => {
+  return {
+    type: "RELOAD",
+    data: data
+  }
+}
 export default addAnswer;
