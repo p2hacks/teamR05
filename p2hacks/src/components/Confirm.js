@@ -4,9 +4,12 @@ import DialogActions from '@material-ui/core/DialogActions';
 import DialogContent from '@material-ui/core/DialogContent';
 import DialogContentText from '@material-ui/core/DialogContentText';
 import DialogTitle from '@material-ui/core/DialogTitle';
+import { useDispatch } from 'react-redux';
+import { push } from 'connected-react-router';
 
 export default function Comfirm() {
   const [open, setOpen] = React.useState(false);
+  const dispatch = useDispatch();
 
   const handleClickOpen = () => {
     setOpen(true);
@@ -14,6 +17,7 @@ export default function Comfirm() {
 
   const handleClose = () => {
     setOpen(false);
+    dispatch(push("/End"));
   };
 
   return (
