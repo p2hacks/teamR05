@@ -1,37 +1,19 @@
-//reducer
-const initData = {
-  i: 0,
-  answer: [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1]
+import { EDITANSWER} from "../actions/index"
+
+const initState={
+  answers: JSON.parse(sessionStorage.getItem("p2_ans")) || Array(17).fill(1)
 };
-const questionReducer = (state = initData, action) => {
-  switch (action.type) {
-    case "ADD":
-      let newanswer = state.answer;
-      newanswer[state.i] = action.num;
-      return {
-        ...state,
-        i: state.i + 1,
-        answer: newanswer
-      };
-    case "CHANGE":
-      let newchangeanswer = state.answer;
-      newchangeanswer[action.num] = action.answernum;
-      return {
-        ...state,
-        answer: newchangeanswer
-      };
+
+function questionReducer(state=initState,action){
+  switch(action.type){
+    case EDITANSWER:
+      let answers= state.answers.slice()
+      answers[action.targetID] = action.answer;
+      sessionStorage.setItem("p2_ans",JSON.stringify(answers));
+      return {answers};
     default:
       return state;
   }
-};
-
-const addReduce = (state, action) => {
-  let newanswer = state.answer.slice();
-  newanswer[state.i] = action.num;
-  return {
-    i: state.i + 1,
-    answer: newanswer
-  };
-};
+}
 
 export default questionReducer;
