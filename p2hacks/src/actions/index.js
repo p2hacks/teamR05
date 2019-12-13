@@ -1,4 +1,11 @@
 // actioncreator
+
+export const EDITANSWER ="EDITANSWER"
+
+export const editAnswer=(targetID,answer)=>{ 
+  return {type:EDITANSWER,targetID,answer};
+}
+
 const addAnswer = num => {
   return {
     type: "ADD",
