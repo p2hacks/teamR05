@@ -4,6 +4,7 @@ import { Route, Switch } from 'react-router'
 import PropTypes from 'prop-types'
 import { connect } from 'react-redux';
 import { ConnectedRouter } from 'connected-react-router'
+import createSagamiddleware from 'redux-saga';
 import Question from './components/question'
 import Confirm from './components/Confirm'
 import Home from './components/Home';

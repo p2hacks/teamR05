@@ -1,20 +1,38 @@
 import React from 'react';
+import LoginRequest from '../actions/index';
 
-const Pre = (props) => {
+
+class Pre extends React.Component {
+  constructor(props) {
+    super(props);
+  }
+  render() {
     return (
-        < form method='post'>
-            <p>
-                <input type="email" name="email"></input>
-            </p>
-            <p>
-                <input type='text'></input>
-            </p>
-            <p>
-                <input type="submit" value="é€�ä¿¡ã�™ã‚‹"></input>
-            </p>
-        </form >
-    )
-
+      <form>
+        <div>
+          <input
+            label="Email"
+            type="email"
+            onChange={(e => setEmail(e.target.value))}
+          />
+        </div>
+        <div>
+          <input
+            label="Address"
+            type="text"
+            onChenge={(e => setAddress(e.target.value))} />
+            </div>
+        <button
+          onClick={LoginRequest(info)}
+        >
+          Send
+        </button>
+      </form>
+    );
+  }
 }
+const [email, setEmail] = React.useState("");
+const [address, setAddress] = React.useState("");
+const info = (email, address);
 
 export default Pre;
