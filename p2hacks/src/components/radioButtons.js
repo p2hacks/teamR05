@@ -4,27 +4,20 @@ import RadioGroup from "@material-ui/core/RadioGroup";
 import FormControlLabel from "@material-ui/core/FormControlLabel";
 import FormControl from "@material-ui/core/FormControl";
 import { connect, useSelector } from "react-redux";
-import { changeAnswer } from "../actions";
+import { editAnswer } from "../actions";
 import { useDispatch } from "react-redux";
 
 export default function RadioButtons(props) {
-  //console.log(props);
   const { num } = props;
-  //console.log(num);
   const fake = useSelector(state => state.question);
-  //console.log(fake);
-  const [value, setValue] = React.useState(String(fake.answer[num]));
-  //console.log("check:" + value);
+  const [value, setValue] = React.useState(String(fake.answers[num]));
   const dispatch = useDispatch();
 
-  const handleChange = event => {
-    //console.log("acted");
-    setValue(event.target.value);
-    let action = changeAnswer(event.target.value, num);
-    dispatch(action);
+  const handleChange = e => {
+    const str_num=e.target.value;
+    setValue(e.target.value);
+    dispatch(editAnswer(num,Number(str_num)));
   };
-  console.log(fake.answer);
-  //console.log(this.props);
 
   return (
     <FormControl component="fieldset">

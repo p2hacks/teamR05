@@ -1,4 +1,4 @@
-import React, { Component } from "react";
+import React, { Component, useEffect } from "react";
 import Dialog from "@material-ui/core/Dialog";
 import DialogActions from "@material-ui/core/DialogActions";
 import DialogContent from "@material-ui/core/DialogContent";
@@ -8,11 +8,12 @@ import { useDispatch } from "react-redux";
 import { push, connectRouter } from "connected-react-router";
 import QuestionStatement from "./questionStatement";
 import RadioButtons from "./radioButtons";
+import { reloadChange } from "../actions/index";
 
 export default function Comfirm() {
+
   const [open, setOpen] = React.useState(false);
   const dispatch = useDispatch();
-
   const handleClickOpen = () => {
     setOpen(true);
   };
@@ -21,6 +22,15 @@ export default function Comfirm() {
     setOpen(false);
     dispatch(push("/End"));
   };
+
+  //const tmpstate = useSelect(state => state.question)
+
+  useEffect(() => {
+    //const data = sessionStorage.getItem('state');
+    const data = sessionStorage.getItem('state');
+    console.log("data", data);
+    dispatch(reloadChange(data));
+  }, [])
 
   return (
     <div>
