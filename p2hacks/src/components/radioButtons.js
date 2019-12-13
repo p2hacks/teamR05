@@ -14,9 +14,9 @@ export default function RadioButtons(props) {
   const dispatch = useDispatch();
 
   const handleChange = e => {
-    const str_num=e.target.value;
+    const str_num = e.target.value;
     setValue(e.target.value);
-    dispatch(editAnswer(num,Number(str_num)));
+    dispatch(editAnswer(num, Number(str_num)));
   };
 
   return (
@@ -29,13 +29,13 @@ export default function RadioButtons(props) {
         row
       >
         <FormControlLabel
-          value="1"
+          value="5"
           control={<Radio color="primary" />}
           label="そう"
           labelPlacement="top"
         />
         <FormControlLabel
-          value="2"
+          value="4"
           control={<Radio color="primary" />}
           label="そうかもしれない"
           labelPlacement="top"
@@ -47,13 +47,13 @@ export default function RadioButtons(props) {
           labelPlacement="top"
         />
         <FormControlLabel
-          value="4"
+          value="2"
           control={<Radio color="primary" />}
           label="そうではないかもしれない"
           labelPlacement="top"
         />
         <FormControlLabel
-          value="5"
+          value="1"
           control={<Radio color="primary" />}
           label="そうではない"
           labelPlacement="top"
