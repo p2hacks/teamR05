@@ -14,7 +14,7 @@ const App = ({ history }) => {
       <div>
         <Switch>
           <Route exact path="/Pre" component={Pre} />
-          <Route path="/survey" component={Survey}/>
+          <Route path="/survey" component={Survey} />
         </Switch>
       </div>
     </ConnectedRouter>
