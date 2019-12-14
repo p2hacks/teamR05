@@ -1,0 +1,30 @@
+#EndContainer {
+    position: relative;
+    margin: 0;
+    left: 20vw;
+    background-color: rgba(255, 255, 255, 0.7);
+    width: 60vw;
+    height: 100vh;
+}
+#EndPosition {
+    position: relative;
+    width: 100vw;
+    height: 100vh;
+    right:20vw;
+    text-align: center;
+    font-size: 150%;
+}
+#EndSentence {
+    position: relative;
+    top: 40%;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    margin: auto;
+    width: 100vw;
+    height: 40vh;
+}
+#EndButton{
+    top:20vh;
+    font-size: 150%;
+}

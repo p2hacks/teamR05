@@ -3,11 +3,13 @@ import Dialog from "@material-ui/core/Dialog";
 import DialogActions from "@material-ui/core/DialogActions";
 import DialogContent from "@material-ui/core/DialogContent";
 import DialogContentText from "@material-ui/core/DialogContentText";
+import Button from "@material-ui/core/Button";
 import { useDispatch,useSelector } from "react-redux";
 import { push } from "connected-react-router";
 import QuestionStatement from "./questionStatement";
 import RadioButtons from "./radioButtons";
-import {postAnswer} from "../actions/index";
+import { postAnswer } from "../actions/index";
+import "../styles/Confirm.css";
 
 export default function Comfirm({match}) {
   const ans = useSelector(store => store.question.answers)
@@ -20,7 +22,7 @@ export default function Comfirm({match}) {
   const handleClose = () => {
     setOpen(false);
   };
-  
+
   const dispatchPostAnswer=()=>{
     const id = Number(match.params.id)
     if(isNaN(id)){
@@ -31,18 +33,18 @@ export default function Comfirm({match}) {
   }
 
   return (
-    <div>
+    <div id="ConfirmContainer">
       {[0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16].map(x => {
         return (
-          <div>
+          <div id="ConfirmSentence">
             <QuestionStatement num={x} />
             <RadioButtons num={x} />
           </div>
         );
       })}
-      <button variant="outlined" color="primary" onClick={handleClickOpen}>
+      <Button id="ConfirmButton" variant="outlined" color="primary" onClick={handleClickOpen}>
         送信する
-      </button>
+      </Button>
       <Dialog
         open={open}
         onClose={handleClose}

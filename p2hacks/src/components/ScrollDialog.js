@@ -5,6 +5,7 @@ import DialogActions from "@material-ui/core/DialogActions";
 import DialogContent from "@material-ui/core/DialogContent";
 import DialogContentText from "@material-ui/core/DialogContentText";
 import DialogTitle from "@material-ui/core/DialogTitle";
+import "../styles/ScrollDialog.css";
 
 export default function ScrollDialog() {
     const [open, setOpen] = React.useState(false);
@@ -31,7 +32,7 @@ export default function ScrollDialog() {
 
     return (
         <div>
-            <Button onClick={handleClickOpen("paper")}>使い方</Button>
+            <Button color="primary" onClick={handleClickOpen("paper")}>使い方</Button>
             <Dialog
                 open={open}
                 onClose={handleClose}

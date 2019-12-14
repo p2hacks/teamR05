@@ -1,0 +1,26 @@
+#PresentContainer {
+    position: relative;
+    margin: 0;
+    left: 15vw;
+    background-color: rgba(255, 255, 255, 0.7);
+    width: 70vw;
+    height: 100vh;
+}
+#PresrntPosition {
+    position: relative;
+    width: 100vw;
+    height: 100vh;
+    right:30vw;
+    text-align: center;
+    font-size: 150%;
+}
+#PresentSentence {
+    position: absolute;
+    top: 30vh;
+    right: 0;
+    bottom: 0;
+    left: 5vw;
+    width: 100vw;
+    height: 40vh;
+    font-size: 150%;
+}
