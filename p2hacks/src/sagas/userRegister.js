@@ -1,6 +1,7 @@
 import {userRegisterSuccess,userRegisterFailed,USERREGSTER_REQUEST} from "../actions/index";
 import {takeEvery,call,put} from "redux-saga/effects";
 import {userRegister} from "../apis/userRegister";
+import {push} from "connected-react-router"
 
 
 // action.payloadにはmailとaddressが入っていることが期待される
@@ -11,6 +12,7 @@ function* userRegisterSaga(action){
         yield put(userRegisterFailed(err));
     }else{
         yield put(userRegisterSuccess(res));
+        yield put(push(`/present/${mail}`));
     }
 }
 // 個人的には上のコードはより改善できるように思える
