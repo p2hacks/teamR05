@@ -2,7 +2,7 @@ import { Provider } from "react-redux";
 import React from "react";
 import ReactDOM from "react-dom";
 import App from "./App";
-import configureStore, { history } from "./store";
+import configureStore, { history } from "./Store";
 
 const store = configureStore();
 
