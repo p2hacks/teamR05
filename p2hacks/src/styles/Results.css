@@ -1,4 +1,4 @@
-#EndContainer {
+#ResultsContainer {
     position: relative;
     margin: 0;
     left: 20vw;
@@ -6,7 +6,7 @@
     width: 60vw;
     height: 100vh;
 }
-#EndPosition {
+#ResultsPosition {
     position: relative;
     width: 100vw;
     height: 100vh;
@@ -14,17 +14,14 @@
     text-align: center;
     font-size: 150%;
 }
-#EndSentence {
-    position: relative;
-    top: 40%;
+#ResultsSentence {
+    position: absolute;
+    top: 20%;
     right: 0;
     bottom: 0;
     left: 0;
     margin: auto;
     width: 100vw;
     height: 40vh;
-}
-#EndButton{
-    top:20vh;
     font-size: 150%;
 }

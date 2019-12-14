@@ -5,12 +5,12 @@ import "../styles/End.css";
 export default function End() {
     Window = window.close();
     return (
-        <div id="endcontainer">
-        < div id = "endposition" >
-            <p id="endsentence">
+        <div id="EndContainer">
+        < div id = "EndPosition" >
+            <p id="EndSentence">
                 アンケートへのご協力ありがとうございました。
             </p>
-            <Button variant="outlined" color="primary" onClick={Window} id="endbutton">終了する</Button>
+            <Button variant="outlined" color="primary" onClick={Window} id="EndButton">終了する</Button>
         </div>
         </div>
   );

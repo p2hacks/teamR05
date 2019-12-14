@@ -1,4 +1,4 @@
-#Qcontainer {
+#QuestionContainer {
     position: relative;
     margin: 0;
     left: 20vw;
@@ -6,7 +6,7 @@
     width: 60vw;
     height: 100vh;
 }
-#Qposition {
+#QuestionPosition {
     position: relative;
     width: 100vw;
     height: 100vh;
@@ -15,13 +15,17 @@
     text-align: center;
     font-size: 150%;
 }
-
-#Qbutton {
-    top: 40%;
-    font-size: 70%;
-    width:100px;
+#QuestionSentence {
+position: absolute;
+top: 70%;
+right: 0;
+bottom: 0;
+left: 0;
+margin: auto;
+width: 100vw;
+height: 40vh;
 }
-#Qendbutton{
-    top:0vh;
-    font-size: 130%;
+
+#QuestionButton {
+    top: 40%;
 }

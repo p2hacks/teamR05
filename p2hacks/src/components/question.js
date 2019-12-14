@@ -4,7 +4,7 @@ import { connect } from "react-redux";
 import Button from "@material-ui/core/Button";
 import QuestionStatement from "./questionStatement";
 import { push } from "connected-react-router";
-import "../styles/question.css";
+import "../styles/Question.css";
 
 class Question extends Component {
   constructor(props) {
@@ -36,27 +36,27 @@ class Question extends Component {
   render() {
     const { questionID, isQuestionEnd } = this.state;
     return (
-      < div id = "Qcontainer" >
-      <div id="Qposition">
+      < div id = "QuestionContainer" >
+      <div id="QuestionPosition">
         {!isQuestionEnd ? (
           <>
-            <QuestionStatement id="Qsentence" num={questionID} />
-            <Button id="Qbutton" onClick={this.handleClick(1)}>
+            <QuestionStatement id="QuestionSentence" num={questionID} />
+            <Button id="QuestionButton" onClick={this.handleClick(1)}>
               {questionID === 3 ? "~20" : questionID === 5 ? "男" : "そうではない"}
             </Button>
-            <Button id="Qbutton" onClick={this.handleClick(2)}>
+            <Button id="QuestionButton" onClick={this.handleClick(2)}>
               {questionID === 3 ? "21~30" : questionID === 5 ? null : "そうではないかもしれない"}
             </Button>
-            <Button id="Qbutton" onClick={this.handleClick(3)}>
+            <Button id="QuestionButton" onClick={this.handleClick(3)}>
               {questionID === 3 ? "31~40" : questionID === 5 ? "どちらでもない" : "わからない"}</Button>
-            <Button id="Qbutton" onClick={this.handleClick(4)}>
+            <Button id="QuestionButton" onClick={this.handleClick(4)}>
               {questionID === 3 ? "40~50" : questionID === 5 ? null : "そうかもしれない"}
             </Button>
-            <Button id="Qbutton" onClick={this.handleClick(5)}>
+            <Button id="QuestionButton" onClick={this.handleClick(5)}>
               {questionID === 3 ? "51~" : questionID === 5 ? "女" : "そう"}</Button>
           </>
         ) : (
-            <Button variant="outlined" color="primary" id="Qendbutton"onClick={this.routePages(`${this.props.match.url.split("/").slice(0, -1).join("/")}/confirm`)}>終わり</Button>
+            <Button variant="outlined" color="primary" id="QuestionEndButton"onClick={this.routePages(`${this.props.match.url.split("/").slice(0, -1).join("/")}/confirm`)}>終わり</Button>
           )}
         </div>
         </ div>

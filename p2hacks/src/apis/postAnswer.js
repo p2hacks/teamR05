@@ -8,7 +8,10 @@ export const postAnswer=(id,result)=>{
             return {res:res.body}
         })
         .catch(err=>{
-            console.log(err)
+            console.log(err.status)
+            if(err.status===400){
+                alert("不適切な入力値です")
+            }
             return {err}
         })
 }

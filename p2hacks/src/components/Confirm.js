@@ -9,7 +9,7 @@ import { push } from "connected-react-router";
 import QuestionStatement from "./questionStatement";
 import RadioButtons from "./radioButtons";
 import { postAnswer } from "../actions/index";
-import "../styles/Confirm.css"
+import "../styles/Confirm.css";
 
 export default function Comfirm({match}) {
   const ans = useSelector(store => store.question.answers)
@@ -33,16 +33,16 @@ export default function Comfirm({match}) {
   }
 
   return (
-      <div id="confirmcontainer">
+    <div id="ConfirmContainer">
       {[0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16].map(x => {
         return (
-          < div  id="confirmsentence">
+          <div id="ConfirmSentence">
             <QuestionStatement num={x} />
             <RadioButtons num={x} />
           </div>
         );
       })}
-      <Button variant="outlined" color="primary" onClick={handleClickOpen} id="confirmbutton">
+      <Button id="ConfirmButton" variant="outlined" color="primary" onClick={handleClickOpen}>
         送信する
       </Button>
       <Dialog
@@ -64,7 +64,7 @@ export default function Comfirm({match}) {
             送信する
           </button>
         </DialogActions>
-        </Dialog>
-            </div>
+      </Dialog>
+    </div>
   );
 }

@@ -1,20 +1,24 @@
-import React from 'react'
-import './App.css';
-import { Route, Switch } from 'react-router'
-import PropTypes from 'prop-types'
-import { ConnectedRouter } from 'connected-react-router'
+import React from 'react';
+import '././styles/App.css';
+import { Route, Switch } from 'react-router';
+import PropTypes from 'prop-types';
+import { ConnectedRouter } from 'connected-react-router';
 import Pre from './components/pre';
 import PreSent from './components/preSent';
+import Results from "./components/Results";
 import Survey from "./components/Survey";
-import img from "./image/snow.JPG";
+import SearchResult from "./components/SearchResult";
 
 const App = ({ history }) => {
   return (
     <ConnectedRouter history={history}>
-      <div id = "backimg">
+      < div id = "backimg" >
         <Switch>
           <Route exact path="/Pre" component={Pre} />
+          <Route exact path="/present/:mail" component={PreSent}/>
           <Route path="/survey" component={Survey}/>
+          <Route exact path="/results/:mail" component={Results}/>
+          <Route exact path="/searchResult" component={SearchResult}/>
         </Switch>
       </div>
     </ConnectedRouter>
