@@ -1,0 +1,26 @@
+#homecontainer {
+    position: relative;
+    margin: 0;
+    left: 25vw;
+    background-color: rgba(255, 255, 255, 0.6);
+    width: 50vw;
+    height: 100vh;
+}
+#homeposition {
+    position: relative;
+    width: 100vw;
+    height: 30vh;
+    top: 35vh;
+    right:25vw;
+    text-align: center;
+    font-size: 150%;
+}
+#homesentence {
+    position: relative;
+    margin: auto;
+    width: 100vw;
+    height: 40vh;
+}
+#homebutton{
+    font-size: 130%;
+}

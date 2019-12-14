@@ -1,0 +1,27 @@
+#Qcontainer {
+    position: relative;
+    margin: 0;
+    left: 20vw;
+    background-color: rgba(255, 255, 255, 0.6);
+    width: 60vw;
+    height: 100vh;
+}
+#Qposition {
+    position: relative;
+    width: 100vw;
+    height: 100vh;
+    top: 40vh;
+    right:20vw;
+    text-align: center;
+    font-size: 150%;
+}
+
+#Qbutton {
+    top: 40%;
+    font-size: 70%;
+    width:100px;
+}
+#Qendbutton{
+    top:0vh;
+    font-size: 130%;
+}

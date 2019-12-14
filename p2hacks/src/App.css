@@ -1,3 +1,6 @@
+.body{
+  margin: 0;
+}
 .App {
   text-align: center;
 }
@@ -28,10 +31,23 @@
   color: #61dafb;
 }
 
+#backimg {
+  margin: 0%;
+  top: 0;
+  left: 0;
+  height: auto;
+  width: 100vw;
+  background-size: cover;
+  background-attachment: fixed;
+  background-image: url(./image/snow.JPG);
+  background-position: right bottom;
+}
+
 @keyframes App-logo-spin {
   from {
     transform: rotate(0deg);
   }
+
   to {
     transform: rotate(360deg);
   }

@@ -1,0 +1,25 @@
+.body{
+     margin: 0;
+}
+#container {
+     position: relative;
+     margin: 0;
+     left: 15vw;
+     background-color: rgba(255, 255, 255, 0.6);
+     width: 70vw;
+}
+#preposition{
+           position: relative;
+            width: 100%;
+            height: 100vh;
+            text-align: center;
+            font-size: 100%;
+       }
+#preform{
+     position: relative;
+     font-size: 130%;
+}
+#prebutton {
+     position: relative;
+     font-size: 110%;
+}
