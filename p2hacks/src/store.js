@@ -16,8 +16,6 @@ export default function configureStore(preloadedState) {
       applyMiddleware(
         routerMiddleware(history),
         sagaMiddleware
-         // for dispatching history actions
-        // ... other middlewares ...
       ),
     ),
   )

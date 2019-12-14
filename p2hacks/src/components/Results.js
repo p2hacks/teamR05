@@ -30,10 +30,7 @@ const ShowResults=({match})=>{
     const {mail}=match.params;
     const dispatch=useDispatch();
     const {results} = useSelector(state => state.calcedAnswer)
-    useEffect(()=>{
-        dispatch(getAnswerRequest(mail));
-    },[])
-    return <>{results.length>0?(renderResults(results)):(<p>まだ結果は来ていません</p>)}</>
+    return <>{(results.length>0?(renderResults(results)):(<p>まだ結果は来ていません</p>))}</>
 }
 
 export default ShowResults;
