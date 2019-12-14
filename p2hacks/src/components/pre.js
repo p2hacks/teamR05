@@ -5,7 +5,7 @@ import {userRegister} from "../actions/index";
 import {useDispatch} from "react-redux";
 import {Link} from "react-router-dom";
 import ScrollDialog from "./ScrollDialog";
-import "../styles/Pre.css";
+import "../styles/pre.css";
 
 
 const Pre = (props) => {
