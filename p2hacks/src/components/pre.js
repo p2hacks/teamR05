@@ -7,6 +7,7 @@ import {Link} from "react-router-dom";
 import ScrollDialog from "./ScrollDialog";
 import "../styles/Pre.css";
 
+
 const Pre = (props) => {
     const dispatch = useDispatch()
     const [mail, setMail] = useState("");
@@ -31,7 +32,8 @@ const Pre = (props) => {
                     </p>
                 </p>
             </div>
-            </div>
+        </div>
+
     )
 }
 

@@ -24,7 +24,7 @@ const renderResults=(results)=>{
                 })}
             </ol>
         </div>
-        </div>
+      </div>
     )
 }
 

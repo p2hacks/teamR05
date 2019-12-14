@@ -32,7 +32,7 @@ export default function ScrollDialog() {
 
     return (
         <div>
-                <Button color="primary" onClick={handleClickOpen("paper")}>使い方</Button>
+            <Button color="primary" onClick={handleClickOpen("paper")}>使い方</Button>
             <Dialog
                 open={open}
                 onClose={handleClose}

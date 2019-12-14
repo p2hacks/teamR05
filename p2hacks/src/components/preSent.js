@@ -5,6 +5,7 @@ import {useSelector,useDispatch} from "react-redux";
 import { getUserID } from "../actions/index";
 import "../styles/Present.css";
 
+
 const PreSent = ({match}) => {
   const {id}=useSelector(store=>store.userID);
   const dispatch=useDispatch();
