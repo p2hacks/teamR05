@@ -36,19 +36,19 @@ class Question extends Component {
         {!isQuestionEnd ? (
           <>
             <QuestionStatement num={questionID} />
-            <Button onClick={this.handleClick(5)}>
-              {questionID === 3 ? "~51" : questionID === 5 ? "女" : "そう"}</Button>
-            <Button onClick={this.handleClick(4)}>
-              {questionID === 3 ? "40~50" : questionID === 5 ? null : "そうかもしれない"}
+            <Button onClick={this.handleClick(1)}>
+              {questionID === 3 ? "~20" : questionID === 5 ? "男" : "そうではない"}
             </Button>
-            <Button onClick={this.handleClick(3)}>
-              {questionID === 3 ? "31~40" : questionID === 5 ? "どちらでもない" : "わからない"}</Button>
             <Button onClick={this.handleClick(2)}>
               {questionID === 3 ? "21~30" : questionID === 5 ? null : "そうではないかもしれない"}
             </Button>
-            <Button onClick={this.handleClick(1)}>
-              {questionID === 3 ? "20~" : questionID === 5 ? "男" : "そうではない"}
+            <Button onClick={this.handleClick(3)}>
+              {questionID === 3 ? "31~40" : questionID === 5 ? "どちらでもない" : "わからない"}</Button>
+            <Button onClick={this.handleClick(4)}>
+              {questionID === 3 ? "40~50" : questionID === 5 ? null : "そうかもしれない"}
             </Button>
+            <Button onClick={this.handleClick(5)}>
+              {questionID === 3 ? "51~" : questionID === 5 ? "女" : "そう"}</Button>
           </>
         ) : (
             <Button onClick={this.props.movePage}>終わり</Button>

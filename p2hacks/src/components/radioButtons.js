@@ -29,21 +29,9 @@ export default function RadioButtons(props) {
         row
       >
         <FormControlLabel
-          value="5"
+          value="1"
           control={<Radio color="primary" />}
-          label={num === 3 ? "~51" : num === 5 ? "女" : "そう"}
-          labelPlacement="top"
-        />
-        <FormControlLabel
-          value="4"
-          control={<Radio color="primary" />}
-          label={num === 3 ? "40~50" : num === 5 ? null : "そうかもしれない"}
-          labelPlacement="top"
-        />
-        <FormControlLabel
-          value="3"
-          control={<Radio color="primary" />}
-          label={num === 3 ? "31~40" : num === 5 ? "どちらでもない" : "わからない"}
+          label={num === 3 ? "~20" : num === 5 ? "男" : "そうではない"}
           labelPlacement="top"
         />
         <FormControlLabel
@@ -53,11 +41,24 @@ export default function RadioButtons(props) {
           labelPlacement="top"
         />
         <FormControlLabel
-          value="1"
+          value="3"
           control={<Radio color="primary" />}
-          label={num === 3 ? "20~" : num === 5 ? "男" : "そうではない"}
+          label={num === 3 ? "31~40" : num === 5 ? "どちらでもない" : "わからない"}
           labelPlacement="top"
         />
+        <FormControlLabel
+          value="4"
+          control={<Radio color="primary" />}
+          label={num === 3 ? "40~50" : num === 5 ? null : "そうかもしれない"}
+          labelPlacement="top"
+        />
+        <FormControlLabel
+          value="5"
+          control={<Radio color="primary" />}
+          label={num === 3 ? "51~" : num === 5 ? "女" : "そう"}
+          labelPlacement="top"
+        />
+
       </RadioGroup>
     </FormControl>
   );
