@@ -9,18 +9,20 @@ import Confirm from './components/Confirm'
 import Home from './components/Home';
 import End from './components/End';
 import Pre from './components/pre';
+import PreSent from './components/preSent';
 
 const App = ({ history }) => {
-  return(
+  return (
     <ConnectedRouter history={history}>
       <div>
         <Switch>
           <Route exact path="/Pre" component={Pre} />
-         <Route exact path="/" component={Home} />
-         <Route exact path="/Home" component={Home} />
-         <Route exact path="/Confirm" component={Confirm} />
-         <Route exact path="/Question" component={Question} />
-         <Route exact path="/End" component={End} />
+          <Route exact path="/PreSent" component={PreSent} />
+          <Route exact path="/" component={Home} />
+          <Route exact path="/Home" component={Home} />
+          <Route exact path="/Confirm" component={Confirm} />
+          <Route exact path="/Question" component={Question} />
+          <Route exact path="/End" component={End} />
         </Switch>
       </div>
     </ConnectedRouter>
