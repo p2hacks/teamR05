@@ -1,6 +1,7 @@
 import {getAnswerFailed,getAnswerSuccess,GETANSWER_REQUEST} from "../actions/index";
 import { call,put,takeEvery} from "redux-saga/effects";
 import {getAnswerRequest} from "../apis/getAnswerRequest";
+import {goBack} from "connected-react-router";
 
 function* getAnswerRequestSaga(action){
     const mail=action.payload;
@@ -8,7 +9,7 @@ function* getAnswerRequestSaga(action){
     if(err){
         yield put(getAnswerFailed(err));
     }else{
-        yield put(getAnswerSuccess(res));
+        yield put(getAnswerSuccess(res.results));
     }
 }
 
