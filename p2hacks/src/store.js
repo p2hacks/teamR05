@@ -8,6 +8,7 @@ import rootSagas from "./sagas/index"
 export const history = createBrowserHistory()
 
 export default function configureStore(preloadedState) {
+  const sagaMiddleware=createSagaMiddleware()
   const store = createStore(
     createRootReducer(history), // root reducer with router state
     preloadedState,
