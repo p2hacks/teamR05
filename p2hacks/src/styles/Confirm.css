@@ -1,0 +1,20 @@
+#ConfirmContainer {
+    position: relative;
+    margin: 0;
+    left: 15vw;
+    background-color: rgba(255, 255, 255, 0.6);
+    width: 70vw;
+}
+
+#ConfirmSentence {
+    position: relative;
+    left: 5vw;
+}
+
+#ConfirmButton {
+    position: relative;
+    width: 40vw;
+    margin-top: 3%;
+    margin-bottom: 3%;
+    left: 15vw;
+}

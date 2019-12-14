@@ -1,0 +1,31 @@
+#QuestionContainer {
+    position: relative;
+    margin: 0;
+    left: 20vw;
+    background-color: rgba(255, 255, 255, 0.6);
+    width: 60vw;
+    height: 100vh;
+}
+#QuestionPosition {
+    position: relative;
+    width: 100vw;
+    height: 100vh;
+    top: 40vh;
+    right:20vw;
+    text-align: center;
+    font-size: 150%;
+}
+#QuestionSentence {
+position: absolute;
+top: 70%;
+right: 0;
+bottom: 0;
+left: 0;
+margin: auto;
+width: 100vw;
+height: 40vh;
+}
+
+#QuestionButton {
+    top: 40%;
+}
