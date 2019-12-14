@@ -1,17 +1,16 @@
-import React, { Component, useEffect } from "react";
+import React from "react";
 import Dialog from "@material-ui/core/Dialog";
 import DialogActions from "@material-ui/core/DialogActions";
 import DialogContent from "@material-ui/core/DialogContent";
 import DialogContentText from "@material-ui/core/DialogContentText";
-import DialogTitle from "@material-ui/core/DialogTitle";
-import { useDispatch } from "react-redux";
-import { push, connectRouter } from "connected-react-router";
+import { useDispatch,useSelector } from "react-redux";
+import { push } from "connected-react-router";
 import QuestionStatement from "./questionStatement";
 import RadioButtons from "./radioButtons";
-import { reloadChange } from "../actions/index";
+import {postAnswer} from "../actions/index";
 
-export default function Comfirm() {
-
+export default function Comfirm({match}) {
+  const ans = useSelector(store => store.question.answers)
   const [open, setOpen] = React.useState(false);
   const dispatch = useDispatch();
   const handleClickOpen = () => {
@@ -20,17 +19,16 @@ export default function Comfirm() {
 
   const handleClose = () => {
     setOpen(false);
-    dispatch(push("/End"));
   };
-
-  //const tmpstate = useSelect(state => state.question)
-
-  useEffect(() => {
-    //const data = sessionStorage.getItem('state');
-    const data = sessionStorage.getItem('state');
-    console.log("data", data);
-    dispatch(reloadChange(data));
-  }, [])
+  
+  const dispatchPostAnswer=()=>{
+    const id = Number(match.params.id)
+    if(isNaN(id)){
+      return
+    }
+    dispatch(postAnswer(id,ans));
+    dispatch(push(`${match.url.split("/").slice(0, -1).join("/")}/end`));
+  }
 
   return (
     <div>
@@ -60,7 +58,7 @@ export default function Comfirm() {
           <button onClick={handleClose} color="primary">
             キャンセル
           </button>
-          <button onClick={handleClose} color="primary" autoFocus>
+          <button onClick={dispatchPostAnswer} color="primary">
             送信する
           </button>
         </DialogActions>

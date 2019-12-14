@@ -29,6 +29,9 @@ class Question extends Component {
       questionID: newID,
     })
   }
+  routePages=(address)=>()=>{
+    this.props.movePage(address)
+  }
   render() {
     const { questionID, isQuestionEnd } = this.state;
     return (
@@ -51,18 +54,25 @@ class Question extends Component {
               {questionID === 3 ? "51~" : questionID === 5 ? "女" : "そう"}</Button>
           </>
         ) : (
-            <Button onClick={this.props.movePage}>終わり</Button>
+            <Button onClick={this.routePages(`${this.props.match.url.split("/").slice(0, -1).join("/")}/confirm`)}>終わり</Button>
           )}
       </div>
     );
   }
 }
 
-function mapDispatchToProps(dispatch) {
+function mapStateToProps(_,props){
   return {
-    editAnswer: (ID, ans) => dispatch(editAnswer(ID, ans)),
-    movePage: () => dispatch(push("/Confirm"))
+    match:props.match
   }
 }
 
-export default connect(null, mapDispatchToProps)(Question);
+function mapDispatchToProps(dispatch){
+  return {
+    editAnswer: (ID, ans) => dispatch(editAnswer(ID, ans)),
+    movePage: (targetPageAddress) => dispatch(push(targetPageAddress))
+  }
+}
+
+export default connect(mapStateToProps,mapDispatchToProps)(Question);
+
