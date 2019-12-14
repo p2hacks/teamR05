@@ -31,31 +31,31 @@ export default function RadioButtons(props) {
         <FormControlLabel
           value="5"
           control={<Radio color="primary" />}
-          label="そう"
+          label={num === 3 ? "~51" : num === 5 ? "女" : "そう"}
           labelPlacement="top"
         />
         <FormControlLabel
           value="4"
           control={<Radio color="primary" />}
-          label="そうかもしれない"
+          label={num === 3 ? "40~50" : num === 5 ? null : "そうかもしれない"}
           labelPlacement="top"
         />
         <FormControlLabel
           value="3"
           control={<Radio color="primary" />}
-          label="わからない"
+          label={num === 3 ? "31~40" : num === 5 ? "どちらでもない" : "わからない"}
           labelPlacement="top"
         />
         <FormControlLabel
           value="2"
           control={<Radio color="primary" />}
-          label="そうではないかもしれない"
+          label={num === 3 ? "21~30" : num === 5 ? null : "そうではないかもしれない"}
           labelPlacement="top"
         />
         <FormControlLabel
           value="1"
           control={<Radio color="primary" />}
-          label="そうではない"
+          label={num === 3 ? "20~" : num === 5 ? "男" : "そうではない"}
           labelPlacement="top"
         />
       </RadioGroup>
