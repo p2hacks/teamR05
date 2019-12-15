@@ -4,7 +4,7 @@ import { connect } from "react-redux";
 import Button from "@material-ui/core/Button";
 import QuestionStatement from "./questionStatement";
 import { push } from "connected-react-router";
-import "../styles/Question.css";
+import "../styles/question.css";
 
 class Question extends Component {
   constructor(props) {

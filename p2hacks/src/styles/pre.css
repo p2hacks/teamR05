@@ -25,3 +25,42 @@
      position: relative;
      font-size: 110%;
 }
+
+.title-logo{
+  padding: 10px;
+  text-align: center;
+}
+
+.title-logo img{
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+}
+
+.work-title{
+  font-size: 24px;
+}
+
+.work-title {
+  position: relative;
+  display: inline-block;
+  padding: 0 55px;
+}
+
+.work-title:before, .work-title:after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  display: inline-block;
+  width: 45px;
+  height: 2px;
+  border-top: solid 1px black;
+  border-bottom: solid 1px black;
+}
+
+.work-title:before {
+  left:0;
+}
+.work-title:after {
+  right: 0;
+}
