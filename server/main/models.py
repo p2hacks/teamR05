@@ -19,5 +19,16 @@ class Result(db.Model):
     def __repr__(self):
         return "<Result id={} user_mail={!r} answer={!r}>".format(self.id,self.user_mail,self.answer)
 
+class Shop(db.Model):
+    id=db.Column(db.Integer,primary_key=True)
+    tag=db.Column(db.Text)
+    url=db.Column(db.Text)
+
+    def __repr__(self):
+        return "<Shop id={} tag={!r} url={!r}>".format(self.id,self.tag,self.url)
+
 def init():
     db.create_all()
+
+def registerShops():
+    pass
