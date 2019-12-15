@@ -22,12 +22,21 @@ const SearchResult=()=>{
             }}>検索</Button>
                 </p>
             </div>
+
             <TextField placeholder="mail"
                 onChange={(e)=>setMail(e.target.value)}
             />
             <Button onClick={()=>{
                 dispatch(getAnswerRequest(mail))
                 }}>検索</Button>
+            <div>
+                <TextField placeholder="mail"
+                    onChange={(e)=>setMail(e.target.value)}
+                />
+                <Button onClick={()=>{
+                    dispatch(getAnswerRequest(mail))
+                    }}>検索</Button>
+            </div>
         </div>
     );
 }

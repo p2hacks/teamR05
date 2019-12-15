@@ -6,7 +6,7 @@ import {useDispatch} from "react-redux";
 import {Link} from "react-router-dom";
 import ScrollDialog from "./ScrollDialog";
 import "../styles/pre.css";
-
+import logo from "../image/logo.png"
 
 const Pre = (props) => {
     const dispatch = useDispatch()
@@ -17,6 +17,14 @@ const Pre = (props) => {
     }
     return (
         <div id = "PreContainer" >
+            <div className="title-logo" >
+                <img src = {logo} />
+                <div>
+                    <div className="work-title">
+                    Present Selector
+                    </div>
+                </div>
+            </div>
             <div id="PrePosition">
             <ScrollDialog />
                 <p >
