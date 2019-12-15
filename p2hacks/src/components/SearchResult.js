@@ -18,7 +18,7 @@ const SearchResult=()=>{
                 </p>
                 <p>
             <Button id="SearchResultButton" onClick={()=>{
-                dispatch(push(`/results/${mail}`))
+                dispatch(getAnswerRequest(mail))
             }}>検索</Button>
                 </p>
             </div>
