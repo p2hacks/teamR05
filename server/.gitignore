@@ -1,5 +1,0 @@
-fakeCloud
-.vscode
-main/__pycache__
-main/test.db
-main/config.py
