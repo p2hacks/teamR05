@@ -15,7 +15,7 @@ const renderResults=(results)=>{
                             {item.map((con, j) => {
                                 return (
                                     <li key={j}>
-                                        {convertTag2Word(con)}
+                                        {convertTag2Word(con)}<a href={`http://localhost:5000/shop/${con}`} target="_blank">shopサイトへ</a>
                                     </li>
                                 )
                             })}
